@@ -1,0 +1,17 @@
+{
+  "name": "acli-mcp",
+  "version": "1.0.0",
+  "description": "MCP server that exposes Acquia CLI commands as AI-callable tools",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "acli-mcp": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}
