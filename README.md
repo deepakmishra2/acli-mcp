@@ -126,6 +126,15 @@ Once connected, you can ask your MCP client things like:
 
 The model picks the right tool and fills in parameters from your request; you only need the relevant IDs (application UUID, environment ID, etc.), which you can also discover by asking it to list them first.
 
+## Documentation & help
+
+Every tool here is a thin wrapper over an official Acquia command or API operation. If you're ever unsure what a command does, what a parameter means, or which IDs it expects, go straight to Acquia's own docs:
+
+- **[Acquia Cloud API documentation](https://cloudapi-docs.acquia.com/)** — the full reference for every API endpoint, including request parameters, bodies, and responses. Best for understanding what any `v1_*` or `v3_*` tool actually calls.
+- **[Acquia CLI (`acli`) documentation](https://docs.acquia.com/acquia-cli)** — overview and usage of the `acli` binary that backs the `v1_*` tools. It also links to the full list of `acli` commands.
+
+To match a tool back to its Acquia docs: drop the `v1_`/`v3_` prefix and look up the underlying command (`v1_environments_database_copy` → the `api:environments:database-copy` command / the "copy database" endpoint). You can also ask your MCP client to describe a tool — the description and parameter list are pulled directly from the Acquia spec.
+
 ## How tool names are formed
 
 - v1: `v1_` + the ACLI command name with non-alphanumerics replaced by `_` (e.g. `applications:environment:list` → `v1_applications_environment_list`).
